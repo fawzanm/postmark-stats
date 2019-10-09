@@ -1,0 +1,54 @@
+{
+    "name": "fawzanm/postmark-stats",
+    "description": "Get statistics for your postmark servers",
+    "keywords": [
+        "fawzanm",
+        "postmark-stats"
+    ],
+    "homepage": "https://github.com/fawzanm/postmark-stats",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Mohammed Fawzan",
+            "email": "fawzanm@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fawzanm\\PostmarkStats\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fawzanm\\PostmarkStats\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fawzanm\\PostmarkStats\\PostmarkStatsServiceProvider"
+            ],
+            "aliases": {
+                "PostmarkStats": "Fawzanm\\PostmarkStats\\PostmarkStatsFacade"
+            }
+        }
+    }
+}
